@@ -11,12 +11,12 @@
     <tr *ngFor="let item of items">
         <td>{{ item.name }}</td>
         <td>{{  item.link }}</td>
-        <td><div *ngIf="condition">
+        <td><div *ngIf="!checkFromFavs(item.name, item.link)">
                 <img class="image" [src]="item.link">
                 <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
             </div>
 
-            <div *ngIf="!condition">
+            <div *ngIf="checkFromFavs(item.name, item.link)">
                 <img class="image favourite" [src]="item.link">
                 <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
             </div>

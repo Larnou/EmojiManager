@@ -7,17 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { DeletedComponent } from './deleted/deleted.component';
-import { EmogisService } from './Emogis.service';
 
-
-// маршруты для переадресации
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'fav', component: FavouriteComponent },
     { path: 'del', component: DeletedComponent },
     { path: '**', redirectTo: '/'}
 ];
-
 
 @NgModule({
   declarations: [
@@ -30,4 +26,5 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -1,29 +1,27 @@
 import { Component } from '@angular/core';
 import {EmogisService} from '../Emogis.service';
 
-
-
 @Component({
     selector: 'app-home',
     templateUrl: `./home.component.html`,
     styleUrls: ['home.component.css']
 })
 
-
 export class HomeComponent {
 
-    condition: boolean=true;
 
     items: Emote[] = EmogisService.getAllEmote();
 
     addToFavs(name: string, link: string) {
-        //this.condition=!this.condition;
         EmogisService.addToFavFromAll(new Emote(name, link))
-
     }
 
     delFromAll(name: string, link: string) {
         EmogisService.addToDelFromAll(new Emote(name, link))
+    }
+
+    checkFromFavs(name: string, link: string) {
+        return EmogisService.checkFromFav(new Emote(name, link))
     }
 }
 

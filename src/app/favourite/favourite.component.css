@@ -1,5 +1,4 @@
 :host {
-    /*background-color: bisque;*/
     grid-column: 2 / 3;
     grid-row: 2 / 7;
     padding-top: 10px;
@@ -59,5 +58,3 @@ div:hover span.only-show-on-hover  {
 .action:hover {
     background-color: #e9d29d;
 }
-
-

@@ -1,42 +1,33 @@
 <div class="grid">
-
-
-
-
-
-
     <div class="navi">
         <div class="grid-item">
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <a routerLink="">All</a>
+                <a routerLink="" (click)="setTitle('home')">All</a>
             </li>
         </div>
 
         <div class="grid-item">
             <li routerLinkActive="active">
-                <a routerLink="/fav">Favourite</a>
+                <a routerLink="/fav" (click)="setTitle('favo')">Favourite</a>
             </li>
         </div>
 
         <div class="grid-item">
             <li routerLinkActive="active">
-                <a routerLink="/del">Deleted</a>
+                <a routerLink="/del" (click)="setTitle('dele')">Deleted</a>
             </li>
         </div>
     </div>
-
 
 <header class="header">
     <div class="small-grid">
-        <div>
-            ТУТ БУДЕТ ТАЙТЛ или не будет
-        </div>
+        <div *ngIf="headerName=='homePage'"> Все доступные эмоджи</div>
+        <div *ngIf="headerName=='favouritePage'"> Любимые эмоджи </div>
+        <div *ngIf="headerName=='deletedPage'"> Удалённые эмоджи </div>
         <div>
             Поиск по названию  <input type ="text" placeholder="Найти .." (input)="search($event)" >
         </div>
-
     </div>
-
 
     <table class="header-table">
         <tr>
@@ -50,7 +41,6 @@
                 <td class="show">action2</td>
             </div>
 
-
             <div *ngIf="show">
                 <td >{{ sName }}</td>
                 <td >{{ sLink }}</td>
@@ -58,23 +48,9 @@
                 <td class="action" (click)="addToFavs(sName, sLink)" >&#8727;</td>
                 <td class="action" (click)="delFromAll(sName, sLink)">x</td>
             </div>
-
-
         </tr>
     </table>
-
-
 </header>
 
-
 <router-outlet></router-outlet>
-
-
-
-
-
-
-
-
-
 </div>

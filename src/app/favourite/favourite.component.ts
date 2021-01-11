@@ -7,21 +7,14 @@ import {EmogisService} from '../Emogis.service';
     styleUrls: ['favourite.component.css']
 })
 
-
 export class FavouriteComponent {
 
-
-
     favourite: Emote[] = EmogisService.favEmote;
-
 
      delFromFav(name:string, link:string) {
          EmogisService.addToDelFromFav(new Emote(name, link))
      }
-
 }
-
-
 
 class Emote {
 
