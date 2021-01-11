@@ -1,0 +1,80 @@
+<div class="grid">
+
+
+
+
+
+
+    <div class="navi">
+        <div class="grid-item">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="">All</a>
+            </li>
+        </div>
+
+        <div class="grid-item">
+            <li routerLinkActive="active">
+                <a routerLink="/fav">Favourite</a>
+            </li>
+        </div>
+
+        <div class="grid-item">
+            <li routerLinkActive="active">
+                <a routerLink="/del">Deleted</a>
+            </li>
+        </div>
+    </div>
+
+
+<header class="header">
+    <div class="small-grid">
+        <div>
+            ТУТ БУДЕТ ТАЙТЛ или не будет
+        </div>
+        <div>
+            Поиск по названию  <input type ="text" placeholder="Найти .." (input)="search($event)" >
+        </div>
+
+    </div>
+
+
+    <table class="header-table">
+        <tr>
+            <div *ngIf="!show">
+                <td class="show">{{ sName }}</td>
+                <td class="show">{{ sLink }}</td>
+                <td class="show"><img class="image" [src]="sLink">
+                    <span class="only-show-on-hover"><img class="image-big" [src]="sLink"></span>
+                </td>
+                <td class="show">actions</td>
+                <td class="show">action2</td>
+            </div>
+
+
+            <div *ngIf="show">
+                <td >{{ sName }}</td>
+                <td >{{ sLink }}</td>
+                <td><img class="image" [src]="sLink"></td>
+                <td class="action" (click)="addToFavs(sName, sLink)" >&#8727;</td>
+                <td class="action" (click)="delFromAll(sName, sLink)">x</td>
+            </div>
+
+
+        </tr>
+    </table>
+
+
+</header>
+
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,22 @@
+<h1>Как-то раз тебе понравились эти эмоджи</h1>
+
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Ссылка</td>
+        <td>Превью</td>
+        <td>Доступные действия</td>
+    </tr>
+
+    <tr *ngFor="let item of favourite">
+        <td>{{ item.name }}</td>
+        <td>{{  item.link }}</td>
+        <td><div>
+            <img class="image" [src]="item.link">
+            <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
+        </div>
+        </td>
+        <td class="action" (click)="delFromFav(item.name, item.link)">x</td>
+    </tr>
+
+</table>

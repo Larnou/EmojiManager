@@ -1,0 +1,26 @@
+<h1> Был момент в истории, когда ты их удалил эти эмоджи</h1>
+
+
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Ссылка</td>
+        <td>Превью</td>
+        <td>Доступные действия</td>
+    </tr>
+
+    <tr *ngFor="let item of deleted">
+        <td>{{ item.name }}</td>
+        <td>{{  item.link }}</td>
+        <td><div>
+            <img class="image" [src]="item.link">
+            <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
+        </div>
+        </td>
+
+        <td class="action" (click)="recover(item.name, item.link)" >O</td>
+
+    </tr>
+
+</table>
+

@@ -1,0 +1,59 @@
+:host {
+    /*background-color: bisque;*/
+    grid-column: 2 / 3;
+    grid-row: 2 / 7;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+h1 {
+    color: #1d2764;
+}
+
+table {
+    border-spacing: 10px 5px;
+    width: 600px;
+}
+
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.image {
+    width: 25px;
+    height: 25px;
+
+}
+
+.image-big {
+    width: 50px;
+    height: 50px;
+}
+
+div span.only-show-on-hover {
+    visibility: hidden;
+}
+div:hover span.only-show-on-hover  {
+    visibility: visible;
+}
+
+.action {
+    width: 40px;
+    font-size: 35px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.action:hover {
+    background-color: #e9d29d;
+}
+
+.favourite {
+    filter: brightness(200%);
+}

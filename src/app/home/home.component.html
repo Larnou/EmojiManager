@@ -1,0 +1,31 @@
+<h1>Тут есть всё, выбирай любое</h1>
+
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Ссылка</td>
+        <td>Превью</td>
+        <td colspan="2">Доступные действия</td>
+    </tr>
+
+    <tr *ngFor="let item of items">
+        <td>{{ item.name }}</td>
+        <td>{{  item.link }}</td>
+        <td><div *ngIf="condition">
+                <img class="image" [src]="item.link">
+                <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
+            </div>
+
+            <div *ngIf="!condition">
+                <img class="image favourite" [src]="item.link">
+                <span class="only-show-on-hover"><img class="image-big" [src]="item.link"></span>
+            </div>
+        </td>
+
+        <td class="action" (click)="addToFavs(item.name, item.link)" >&#8727;</td>
+        <td class="action" (click)="delFromAll(item.name, item.link)">x</td>
+
+    </tr>
+
+</table>
+
